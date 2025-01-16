@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet, Image, ScrollView } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { TextInput, Button } from 'react-native-paper';
 
@@ -18,11 +18,13 @@ const ContactForm = () => {
     };
 
     return (
-            <View style={styles.container}>
-            <Image
-                source={require('../assets/bgimage.png')} // Replace with the actual background image URL
-                style={styles.backgroundImage}
-            />
+        <View style={styles.container}>
+            <ScrollView>
+
+                <Image
+                    source={require('../assets/bgimage.png')} // Replace with the actual background image URL
+                    style={styles.backgroundImage}
+                />
                 <TextInput
                     mode="outlined"
                     outlineStyle={styles.roundedInput}
@@ -95,7 +97,8 @@ const ContactForm = () => {
                 >
                     Kontaktiere mich
                 </Button>
-            </View>
+            </ScrollView>
+        </View>
     );
 };
 
@@ -103,7 +106,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 16,
-        paddingBottom:90,
+        paddingBottom: 90,
         justifyContent: 'center',
         backgroundColor: '#f9f9f9',
     },

@@ -2,7 +2,7 @@ import { Alert, BackHandler, Image, StyleSheet, Text, TouchableOpacity, View } f
 import React, { useEffect } from 'react'
 import Product from '../product';
 import NewsComponent from '../NewsComponent';
-import Register from '../register';
+import AbonnementScreen from '../AbonnementScreen';
 import ContactForm from '../ContactForm';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons'; // or use any icon library
@@ -254,7 +254,7 @@ function TabNavigation() {
             <Tab.Screen name="Index" component={Index} />
             <Tab.Screen name="Product" component={Product} />
             <Tab.Screen name="HomeNew" component={NewsComponent} />
-            <Tab.Screen name="Alerts" component={Register} />
+            <Tab.Screen name="Alerts" component={AbonnementScreen} />
             <Tab.Screen name="Cart" component={ContactForm} />
             <Tab.Screen
                 name="MultiStepForm"
