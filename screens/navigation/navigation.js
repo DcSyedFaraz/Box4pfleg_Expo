@@ -150,7 +150,7 @@ const MultiStepFormStack = () => {
 const AppNavigator = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Home">
+            <Stack.Navigator initialRouteName="Splash">
 
                 {/* Splash Screen */}
                 <Stack.Screen

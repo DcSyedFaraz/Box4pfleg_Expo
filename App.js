@@ -4,7 +4,7 @@ import AppNavigator from './screens/navigation/navigation';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SplashScreen from './screens/navigation/SplashScreen';
-import RNBootSplash from "react-native-bootsplash";
+// import RNBootSplash from "react-native-bootsplash";
 import { Provider } from 'react-redux';
 import store from './screens/store';
 
@@ -14,7 +14,7 @@ import store from './screens/store';
 const App = () => {
   useEffect(() => {
     // Hide the native splash screen after the React Native splash screen is done
-    RNBootSplash.hide({ fade: true });
+    // RNBootSplash.hide({ fade: true });
   }, []);
   return (
 
