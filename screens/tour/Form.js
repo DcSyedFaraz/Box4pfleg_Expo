@@ -555,6 +555,7 @@ const styles = StyleSheet.create({
     },
     productList: {
         marginBottom: 20,
+        paddingHorizontal: 6,
     },
     productContainer: {
         flexDirection: "row",
@@ -585,9 +586,12 @@ const styles = StyleSheet.create({
     },
     productQuantity: {
         fontSize: 16,
-        fontWeight: "bold",
-        color: "#214184",
         marginLeft: 10,
+        padding: 5,
+        borderRadius: 8,
+        backgroundColor: "#224184",
+        color: "#fff",
+        fontWeight: "bold",
     },
     termsContainer: {
         flexDirection: "row",

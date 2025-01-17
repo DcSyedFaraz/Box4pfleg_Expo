@@ -7,14 +7,16 @@ import Index2 from '../assets/SVG/index2';
 import Index3 from '../assets/SVG/index3';
 import Index4 from '../assets/SVG/index4';
 
-const Index = () => {
+
+const Index = ({ navigation }) => {
+    // const navigation = useNavigation();
     return (
         <View style={styles.container}>
             {/* <Index1 width="62" height="62" /> */}
-                <Image
-                    source={require('../assets/bgimage.png')} // Replace with the actual background image URL
-                    style={styles.backgroundImage}
-                />
+            <Image
+                source={require('../assets/bgimage.png')} // Replace with the actual background image URL
+                style={styles.backgroundImage}
+            />
             <View style={styles.header}>
                 <View style={styles.overlay}>
                     <View>
@@ -30,7 +32,7 @@ const Index = () => {
             </View>
 
             <View style={styles.gridContainer}>
-                <TouchableOpacity style={styles.gridItem}>
+                <TouchableOpacity style={styles.gridItem} onPress={() => navigation.navigate('Subscription')}>
                     <Text style={styles.icon}>
                         <Index1 width="62" height="62" />
                     </Text>

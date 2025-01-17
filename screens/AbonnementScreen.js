@@ -10,6 +10,7 @@ import {
     Provider,
     Text,
 } from "react-native-paper";
+import { Picker } from "@react-native-picker/picker";
 
 const AbonnementScreen = () => {
     const [salutation, setSalutation] = useState("Frau");
@@ -38,7 +39,16 @@ const AbonnementScreen = () => {
             <ScrollView style={styles.container}>
                 <View style={styles.formGroup}>
                     {/* Salutation Dropdown */}
-                    <SelectDropdown
+                    <Picker
+                        style={styles.dropdown}
+                        selectedValue={salutation}
+                        onValueChange={(selectedItem) => setSalutation(selectedItem)
+                        }>
+                        <Picker.Item label="Frau" value="Frau" />
+                        <Picker.Item label="Herr" value="Herr" />
+                        <Picker.Item label="Divers" value="Divers" />
+                    </Picker>
+                    {/* <SelectDropdown
                         data={['Frau', 'Herr', 'Divers']}
                         defaultValue={salutation}
                         onSelect={(selectedItem) => setSalutation(selectedItem)}
@@ -47,10 +57,12 @@ const AbonnementScreen = () => {
                         buttonStyle={styles.dropdown}
                         buttonTextStyle={styles.dropdownText}
                         dropdownStyle={styles.dropdownMenu}
-                    />
+                    /> */}
 
                     {/* Form Fields */}
                     <TextInput
+                        activeOutlineColor="#2d4e8e"
+                        outlineColor="#fff"
                         label="Pflegedienst"
                         value={form.careService}
                         onChangeText={(value) => handleInputChange("careService", value)}
@@ -58,6 +70,8 @@ const AbonnementScreen = () => {
                         style={styles.input}
                     />
                     <TextInput
+                        activeOutlineColor="#2d4e8e"
+                        outlineColor="#fff"
                         label="Titel"
                         value={form.title}
                         onChangeText={(value) => handleInputChange("title", value)}
@@ -65,6 +79,8 @@ const AbonnementScreen = () => {
                         style={styles.input}
                     />
                     <TextInput
+                        activeOutlineColor="#2d4e8e"
+                        outlineColor="#fff"
                         label="Vorname"
                         value={form.firstName}
                         onChangeText={(value) => handleInputChange("firstName", value)}
@@ -72,6 +88,8 @@ const AbonnementScreen = () => {
                         style={styles.input}
                     />
                     <TextInput
+                        activeOutlineColor="#2d4e8e"
+                        outlineColor="#fff"
                         label="Nachname"
                         value={form.lastName}
                         onChangeText={(value) => handleInputChange("lastName", value)}
@@ -79,6 +97,8 @@ const AbonnementScreen = () => {
                         style={styles.input}
                     />
                     <TextInput
+                        activeOutlineColor="#2d4e8e"
+                        outlineColor="#fff"
                         label="Straße"
                         value={form.street}
                         onChangeText={(value) => handleInputChange("street", value)}
@@ -86,6 +106,8 @@ const AbonnementScreen = () => {
                         style={styles.input}
                     />
                     <TextInput
+                        activeOutlineColor="#2d4e8e"
+                        outlineColor="#fff"
                         label="Stadt"
                         value={form.city}
                         onChangeText={(value) => handleInputChange("city", value)}
@@ -93,6 +115,8 @@ const AbonnementScreen = () => {
                         style={styles.input}
                     />
                     <TextInput
+                        activeOutlineColor="#2d4e8e"
+                        outlineColor="#fff"
                         label="PLZ"
                         value={form.postalCode}
                         onChangeText={(value) => handleInputChange("postalCode", value)}
@@ -101,6 +125,8 @@ const AbonnementScreen = () => {
                         keyboardType="numeric"
                     />
                     <TextInput
+                        activeOutlineColor="#2d4e8e"
+                        outlineColor="#fff"
                         label="Tel"
                         value={form.phone}
                         onChangeText={(value) => handleInputChange("phone", value)}
@@ -109,6 +135,8 @@ const AbonnementScreen = () => {
                         keyboardType="phone-pad"
                     />
                     <TextInput
+                        activeOutlineColor="#2d4e8e"
+                        outlineColor="#fff"
                         label="Email"
                         value={form.email}
                         onChangeText={(value) => handleInputChange("email", value)}
@@ -129,6 +157,9 @@ const AbonnementScreen = () => {
 
                     <Divider style={styles.divider} />
 
+                    <Text style={styles.heading}>
+                        Weitere Optionen:
+                    </Text>
                     <Text style={styles.optionsText}>
                         Bitte stellen Sie einen Antrag an uns, um die versicherte Person
                         oder Versicherung dieser Boxpflege zu ändern. Wir melden uns
@@ -165,9 +196,15 @@ const styles = StyleSheet.create({
     },
     formGroup: {
         marginBottom: 20,
+        // backgroundColor:'red'
     },
     dropdown: {
         marginBottom: 16,
+        width: '100%',
+        borderRadius: 18,
+        backgroundColor: '#fff',
+        paddingVertical: 10,
+        paddingHorizontal: 15,
     },
     input: {
         marginBottom: 16,
@@ -175,7 +212,7 @@ const styles = StyleSheet.create({
     button: {
         marginTop: 16,
         paddingVertical: 8,
-        borderRadius: 18,
+        borderRadius: 12,
     },
     buttonSecondary: {
         paddingVertical: 8,
@@ -185,13 +222,28 @@ const styles = StyleSheet.create({
     marginBottom: {
         marginBottom: 130,
     },
+    dropdownText: {
+        fontSize: 16,
+        color: '#333',
+    },
+    dropdownMenu: {
+        backgroundColor: '#redd',
+        borderRadius: 8,
+        marginTop: 8,
+    },
     divider: {
         marginVertical: 20,
     },
     optionsText: {
         marginBottom: 16,
         fontSize: 14,
-        color: "#333",
+        color: "#214184",
+    },
+    heading: {
+        // marginBottom: 16,
+        fontSize: 18,
+        color: "#214184",
+        fontWeight: "bold",
     },
 });
 

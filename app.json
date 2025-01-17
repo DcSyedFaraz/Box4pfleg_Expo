@@ -19,7 +19,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.sfaraz.Box4pfleg2"
     },
     "web": {
       "favicon": "./assets/favicon.png"

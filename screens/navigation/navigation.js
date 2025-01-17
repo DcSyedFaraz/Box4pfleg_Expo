@@ -23,6 +23,8 @@ import { useSelector } from 'react-redux';
 import Logo from '../../assets/SVG/logo';
 import Form from '../tour/Form';
 import Success from '../success_screen/Success';
+import Abonnement from '../../assets/SVG/Abonnement';
+import SubscriptionScreen from '../SubscriptionScreen';
 // import { NavigationContainer, NavigationIndependentTree } from '@react-navigation/native';
 
 
@@ -42,7 +44,7 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
             >
                 <Ionicons
                     name="person-circle-outline"
-                    size={28}
+                    size={34}
                     color={state.index === 0 ? '#2d4e8e' : '#aaa'}
                 />
                 <Text
@@ -60,18 +62,19 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
                 style={styles.tabButton}
                 onPress={() => navigation.navigate(state.routes[3].name)}
             >
-                <Ionicons
+                {/* <Ionicons
                     name="call-outline"
                     size={28}
                     color={state.index === 3 ? '#2d4e8e' : '#aaa'}
-                />
+                /> */}
+                <Abonnement stroke={state.index === 3 ? '#2d4e8e' : '#aaa'} />
                 <Text
                     style={[
                         styles.tabLabel,
                         { color: state.index === 3 ? '#2d4e8e' : '#aaa' }, // Conditional color
                     ]}
                 >
-                    Call
+                    Abonnement
                 </Text>
             </TouchableOpacity>
 
@@ -80,12 +83,7 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
                 style={[styles.centerButton, { backgroundColor: centerButtonColor }]}
                 onPress={() => navigation.navigate(state.routes[1].name)}
             >
-                {/* <Ionicons
-                    name="add-sharp"
-                    size={40}
-                    color="#fff"
-                    style={styles.boldIcon}
-                /> */}
+                
                 <View style={styles.boldIcon}>
                     <CenterIcon width="32" height="32" />
                 </View>
@@ -93,13 +91,13 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
 
             {/* ContactForm Tab */}
             <TouchableOpacity
-                activeOpacity={0.9}
+                activeOpacity={0.7}
                 style={styles.tabButton}
                 onPress={() => navigation.navigate(state.routes[4].name)}
             >
                 <Ionicons
                     name="help-circle-outline"
-                    size={28}
+                    size={34}
                     color={state.index === 4 ? '#2d4e8e' : '#aaa'}
                 />
                 <Text
@@ -119,7 +117,7 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
             >
                 <Ionicons
                     name="notifications-outline"
-                    size={28}
+                    size={34}
                     color={state.index === 2 ? '#2d4e8e' : '#aaa'}
                 />
                 <Text
@@ -261,6 +259,11 @@ function TabNavigation() {
                 component={MultiStepFormStack}
                 options={{ tabBarButton: () => null }} // Hides the tab bar button
             />
+            <Tab.Screen
+                name="Subscription"
+                component={SubscriptionScreen}
+                options={{ tabBarButton: () => null }} // Hides the tab bar button
+            />
         </Tab.Navigator>
     )
 }
@@ -318,8 +321,8 @@ const styles = StyleSheet.create({
         // position: 'absolute',
         bottom: 15, // Adjust as needed
         alignSelf: 'center',
-        width: 70,
-        height: 70,
+        width: 90,
+        height: 90,
         borderRadius: 45,
         backgroundColor: '#2d4e8e',
         alignItems: 'center',
@@ -329,9 +332,9 @@ const styles = StyleSheet.create({
         // shadowOpacity: 0.3,
         // shadowRadius: 5,
         marginBottom: 50,
-        elevation: 5,
-        // borderWidth: 10,
-        // borderColor: '#ffffff',
+        // elevation: 5,
+        borderWidth: 10,
+        borderColor: '#ffffff',
     },
     tabLabel: {
         fontSize: 10,
